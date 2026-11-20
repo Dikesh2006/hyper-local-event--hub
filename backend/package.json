@@ -1,0 +1,27 @@
+{
+  "name": "hyper-local-event-hub-backend",
+  "version": "1.0.0",
+  "description": "Backend for Hyper Local Event Hub - MERN event booking platform",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node seeder.js",
+    "seed:demo": "node seedDemoData.js",
+    "test:razorpay": "node test_razorpay_flow.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.5.0",
+    "morgan": "^1.10.0",
+    "qrcode": "^1.5.1",
+    "razorpay": "^2.9.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
