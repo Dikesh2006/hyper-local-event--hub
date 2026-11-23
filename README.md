@@ -1,6 +1,6 @@
 # 🎪 Hyper Local Event Hub
 
-> **A Comprehensive, Production-Ready MERN Stack Platform for Local Entertainment, Movie Ticketing, Banquet Hall Reservations, and Professional Event Manager Booking with Automated QR Passports and Razorpay Test Mode Payments.**
+> **An Enterprise-Grade, Full-Stack MERN Platform Unifying Multiplex Movie Ticketing, Live Event Discovery, Banquet Hall Reservations, and Freelance Event Manager Hiring with Automated Cryptographic QR Passports and Razorpay Test Mode Payments.**
 
 [![Stack](https://img.shields.io/badge/Stack-MERN-blue.svg)](https://react.dev/)
 [![Node.js](https://img.shields.io/badge/Node.js-v18%2B-339933.svg?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
@@ -9,68 +9,77 @@
 [![Vite](https://img.shields.io/badge/Vite-v5.4-646CFF.svg?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.4-38BDF8.svg?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-v7.0%2B-47A248.svg?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Razorpay](https://img.shields.io/badge/Razorpay-Test_Mode-02042B.svg?logo=razorpay&logoColor=3395FF)](https://razorpay.com/)
+[![Razorpay](https://img.shields.io/badge/Razorpay-Test_Mode_Verified-02042B.svg?logo=razorpay&logoColor=3395FF)](https://razorpay.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?logo=github)](https://github.com/Dikesh2006/hyper-local-event--hub/pulls)
 
 ---
 
 ## 📑 Table of Contents
 
 1. [📌 Project Overview](#-project-overview)
-2. [✨ Key Features](#-key-features)
+2. [✨ Key Features & Modules](#-key-features--modules)
 3. [🛠️ Technology Stack](#️-technology-stack)
-4. [📐 Frontend & Backend Architecture](#-frontend--backend-architecture)
-5. [📁 Complete Folder Structure](#-complete-folder-structure)
+4. [📐 System Architecture & Workflow](#-system-architecture--workflow)
+5. [📁 Complete Directory Structure](#-complete-directory-structure)
 6. [🚀 Installation & Setup Guide](#-installation--setup-guide)
 7. [🔑 Environment Variables Reference](#-environment-variables-reference)
-8. [🗄️ MongoDB Schemas & Data Models](#️-mongodb-schemas--data-models)
-9. [🔐 Authentication & Security Architecture](#-authentication--security-architecture)
-10. [👥 User Roles & Access Control (RBAC)](#-user-roles--access-control-rbac)
-11. [🎬 Movie Booking & Seat Matrix Engine](#-movie-booking--seat-matrix-engine)
-12. [🎟️ Event Booking & Live Inventory Engine](#️-event-booking--live-inventory-engine)
-13. [🏛️ Banquet Hall & Venue Reservation](#️-banquet-hall--venue-reservation)
-14. [🧑‍💼 Event Manager Hiring System](#-event-manager-hiring-system)
-15. [⭐ Customer Review & Rating Engine](#-customer-review--rating-engine)
-16. [💳 Payment Gateway & Razorpay Test Mode Flow](#-payment-gateway--razorpay-test-mode-flow)
-17. [📊 Admin & Role Dashboards](#-admin--role-dashboards)
+8. [🗄️ Database Schemas & Entity Relationships](#️-database-schemas--entity-relationships)
+9. [🔐 Authentication, Security & RBAC](#-authentication-security--rbac)
+10. [🎬 Module 1: Multiplex Movie Booking & Seat Engine](#-module-1-multiplex-movie-booking--seat-engine)
+11. [🎟️ Module 2: Live Event Discovery & Pass Inventory](#️-module-2-live-event-discovery--pass-inventory)
+12. [🏛️ Module 3: Banquet Hall & Venue Reservation](#️-module-3-banquet-hall--venue-reservation)
+13. [🧑‍💼 Module 4: Certified Event Manager Hiring](#-module-4-certified-event-manager-hiring)
+14. [📱 Module 5: Cryptographic QR Code Digital Passports](#-module-5-cryptographic-qr-code-digital-passports)
+15. [💳 Module 6: Razorpay Payment Gateway & HMAC-SHA256 Flow](#-module-6-razorpay-payment-gateway--hmac-sha256-flow)
+16. [⭐ Module 7: Polymorphic Ratings & Feedback Engine](#-module-7-polymorphic-ratings--feedback-engine)
+17. [📊 Module 8: Business Intelligence & Multi-Role Dashboards](#-module-8-business-intelligence--multi-role-dashboards)
 18. [🔌 Complete REST API Endpoints Specification](#-complete-rest-api-endpoints-specification)
 19. [🧪 Testing & Seeding Utilities](#-testing--seeding-utilities)
-20. [🛠️ Troubleshooting & FAQ](#️-troubleshooting--faq)
-21. [👥 Demo Credentials Reference](#-demo-credentials-reference)
-22. [📄 Documentation Links](#-documentation-links)
+20. [👥 Pre-Seeded Demo Credentials](#-pre-seeded-demo-credentials)
+21. [🛠️ Troubleshooting & FAQ](#️-troubleshooting--faq)
+22. [🤝 Contributing & GitHub Workflow](#-contributing--github-workflow)
+23. [📄 Documentation Links & License](#-documentation-links--license)
 
 ---
 
 ## 📌 Project Overview
 
-**Hyper Local Event Hub** is an integrated full-stack MERN (MongoDB, Express.js, React, Node.js) web application architected to decentralize and unify local community entertainment, live event hosting, multiplex movie ticketing, banquet hall leasing, and freelance event planner hiring.
+**Hyper Local Event Hub** is a production-ready, full-stack MERN (MongoDB, Express.js, React, Node.js) web platform architected to decentralize and unify local community entertainment, live event hosting, multiplex movie ticketing, banquet hall leasing, and freelance event planner hiring.
 
-### Problem It Solves
-Traditional platforms isolate movie ticketing, live event passes, venue reservations, and event planner directories into disconnected silos. **Hyper Local Event Hub** brings these four hyper-local commerce sectors under a single modern application with:
-- **Unified Discovery**: Browse upcoming blockbusters, concerts, college festivals, comedy clubs, wedding halls, and event coordinators based on city and tags.
-- **Seat-Level Concurrency Control**: Interactive multiplex seating layouts with live duplicate-booking prevention and VIP tiering.
+### The Problem It Solves
+Traditional platforms isolate movie ticketing, live event passes, venue reservations, and event planner directories into disconnected silos:
+- Movie-goers use cinema-specific portals with rigid seat pricing.
+- Event attendees purchase passes from ticketing aggregators lacking hyper-local vendor integration.
+- Banquet and celebration venues rely on manual phone bookings and unstructured price quotes.
+- Event managers and decorators lack verifiable portfolios and structured client hiring pipelines.
+
+### The Hyper Local Event Hub Solution
+**Hyper Local Event Hub** brings these four hyper-local commerce sectors under a single modern application with:
+- **Unified Discovery Engine**: Search and filter upcoming blockbusters, concerts, college festivals, comedy clubs, wedding halls, and event coordinators based on city and tags.
+- **Seat-Level Concurrency Control**: Interactive multiplex seating layouts with row-based VIP Recliner vs. Standard pricing and real-time duplicate-booking prevention.
 - **Tamper-Proof QR Tickets**: Instant Base64 QR code generation containing cryptographic ticket data for on-site scanning and redemption.
-- **Verified Payment Processing**: Built-in Razorpay checkout supporting Card, UPI, Netbanking, and Wallets with server-side HMAC-SHA256 signature verification and graceful demo fallbacks.
-- **Role-Centric Portals**: Six distinct role profiles ranging from general customers to event organizers, venue owners, theatre managers, and platform super-administrators.
+- **Verified Payment Processing**: Built-in Razorpay checkout supporting Card, UPI, Netbanking, and Wallets with server-side HMAC-SHA256 signature verification and graceful developer test fallbacks.
+- **Role-Centric Portals**: 6 distinct role profiles ranging from general customers to event organizers, venue owners, theatre managers, and platform super-administrators.
 
 ---
 
-## ✨ Key Features
+## ✨ Key Features & Modules
 
-### 👤 Multi-Role User Management
-- Secure user registration and login with bcrypt password hashing (10 salt rounds).
-- Stateless JSON Web Token (JWT) authorization passed via HTTP Bearer headers.
+### 👤 Multi-Role Identity & Access Control
+- Secure user registration and login with `bcryptjs` password hashing (10 salt rounds).
+- Stateless JSON Web Token (JWT) authorization passed via HTTP `Authorization: Bearer <token>` headers.
 - Support for 6 distinct roles: `user`, `organizer`, `hallOwner`, `theatreOwner`, `manager`, and `admin`.
 - Role verification middleware with automatic role normalization.
 - Customer wishlist and saved favorites for upcoming events.
 
-### 🎬 Interactive Movie Ticket Booking
+### 🎬 Interactive Multiplex Movie Ticket Booking
 - Multiplex showtime scheduling, multiple screens, and theatre listings.
-- Visual seat selection grid with VIP Recliner (Row A & B) and Standard Tier pricing.
+- Visual seat selection grid with VIP Recliner (Row A & B) and Standard Club Tier pricing.
 - Concurrency-safe seat locks: prevents multiple users from booking the same seat.
 - Real-time seat availability updates and cancellation seat restoration.
 
-### 🎟️ Event Discovery & Registration
+### 🎟️ Event Discovery & Live Pass Inventory
 - Category-based filtering: **Concerts**, **Sports Matches**, **Stand-up Comedy**, **College Fests**, and **Festivals**.
 - Date-range and city-based querying with live inventory counters.
 - Automatic decrement of available passes upon ticket purchase and increment upon cancellation.
@@ -87,9 +96,9 @@ Traditional platforms isolate movie ticketing, live event passes, venue reservat
 - Profiles featuring core expertise, portfolio bios, contact channels, and daily fees.
 - Integrated booking system for hiring supervisors for private and corporate gatherings.
 
-### 🎟️ Cryptographic QR Code Digital Tickets
+### 📱 Cryptographic QR Code Digital Passports
 - Automatic Base64 QR code ticket generation using the `qrcode` engine upon confirmed payment.
-- Encodes Ticket ID, User ID, Show/Venue details, Seat Numbers, Total Price, and Timestamp.
+- Encodes Ticket ID (`TKT-<TIMESTAMP>-<RANDOM>`), User ID, Show/Venue details, Seat Numbers, Total Price, and Timestamp.
 - Digital ticket preview modal with one-click print and save capabilities.
 
 ### 💳 Razorpay Test Mode Payment Gateway
@@ -119,7 +128,7 @@ Traditional platforms isolate movie ticketing, live event passes, venue reservat
 | **Styling & CSS** | Tailwind CSS | v3.4.5 | Modern utility-first responsive styling |
 | **CSS Processing** | PostCSS & Autoprefixer | v8.4.38 | Automated browser prefixing |
 | **Animations** | GSAP (GreenSock) | v3.15.0 | High-performance page transitions and UI reveals |
-| **Routing** | React Router DOM | v6.14.1 | Declarative client-side routing & route guards |
+| **Routing** | React Router DOM | v6.14.1 | Declarative client-side routing & role guards |
 | **HTTP Client** | Axios | v1.5.1 | REST API communication with Bearer token injection |
 | **Backend Runtime** | Node.js | v18.0.0+ | Server-side JavaScript runtime |
 | **Web Framework** | Express.js | v4.18.2 | RESTful API server and route handling |
@@ -134,115 +143,165 @@ Traditional platforms isolate movie ticketing, live event passes, venue reservat
 
 ---
 
-## 📐 Frontend & Backend Architecture
+## 📐 System Architecture & Workflow
+
+### 1. High-Level 3-Tier Architecture
 
 ```mermaid
 flowchart TB
-    subgraph Client["Frontend Client (React 18 + Vite + Tailwind CSS)"]
-        UI["UI Pages & Modals"]
-        AuthContext["Auth Context (JWT Storage)"]
-        AxiosClient["Axios API Client"]
-    end
-
-    subgraph Server["Express REST API (Node.js)"]
-        AuthGuard["JWT protect Middleware"]
-        RoleGuard["RBAC authorize Middleware"]
-        Controllers["Resource Controllers"]
+    subgraph PresentationTier["1. Presentation Tier (Client SPA)"]
+        direction TB
+        Browser["User Desktop / Mobile Browser"]
+        ReactApp["React 18 SPA (Vite + Tailwind CSS + GSAP)"]
+        AuthContext["Auth Context (JWT & Role State)"]
+        AxiosClient["Axios HTTP Client (Interceptors)"]
         
-        subgraph Endpoints["Route Modules"]
-            AuthR["/api/auth"]
-            MovieR["/api/movies"]
-            EventR["/api/events"]
-            HallR["/api/halls"]
-            ManagerR["/api/managers"]
-            BookingR["/api/bookings"]
-            PaymentR["/api/payments"]
-            AdminR["/api/admin"]
-            TheatreR["/api/theatres"]
-            ReviewR["/api/reviews"]
-        end
+        Browser --> ReactApp
+        ReactApp --> AuthContext
+        ReactApp --> AxiosClient
     end
 
-    subgraph Services["Core Engine & Services"]
-        QRGen["QR Code Generator (qrcode)"]
-        RazorpayEngine["Razorpay Payment Gateway (HMAC-SHA256)"]
+    subgraph GatewayTier["2. API Gateway & Security Layer"]
+        direction TB
+        ViteProxy["Vite Dev Proxy (/api -> :4000)"]
+        CORS["CORS Middleware"]
+        Morgan["Morgan HTTP Request Logger"]
+        JSONParser["Express JSON Body Parser"]
+        JWTPrivateGuard["JWT Verification Middleware (protect)"]
+        RBACGuard["Role-Based Access Guard (authorize)"]
+        
+        ViteProxy --> CORS
+        CORS --> Morgan
+        Morgan --> JSONParser
+        JSONParser --> JWTPrivateGuard
+        JWTPrivateGuard --> RBACGuard
     end
 
-    subgraph DataStore["Data Storage (MongoDB)"]
-        MongooseODM["Mongoose Models"]
-        MongoDatabase[("MongoDB Collection")]
+    subgraph ControllerTier["3. Application & Controller Tier"]
+        direction TB
+        AuthCtrl["Auth Controller"]
+        UserCtrl["User Controller"]
+        MovieCtrl["Movie & Showtime Controller"]
+        TheatreCtrl["Theatre & Screen Controller"]
+        EventCtrl["Event & Inventory Controller"]
+        HallCtrl["Hall & Venue Controller"]
+        ManagerCtrl["Manager Directory Controller"]
+        BookingEngine["Booking Controller (processBookingCreation)"]
+        PaymentEngine["Payment Controller (Razorpay Test Mode)"]
+        ReviewCtrl["Polymorphic Review Controller"]
+        AdminCtrl["Admin Platform Controller"]
+        BusinessCtrl["Business Intelligence Controller"]
     end
 
-    UI --> AuthContext
-    AuthContext --> AxiosClient
-    AxiosClient -->|HTTP / REST API| AuthGuard
-    AuthGuard --> RoleGuard
-    RoleGuard --> Endpoints
-    Endpoints --> Controllers
-    Controllers --> MongooseODM
-    Controllers --> QRGen
-    Controllers --> RazorpayEngine
-    MongooseODM --> MongoDatabase
+    subgraph ServiceTier["4. External & Utility Services"]
+        direction TB
+        QREngine["QRCode Engine (Base64 Generation)"]
+        RazorpaySDK["Razorpay REST API / Test Mode Simulator"]
+        BcryptModule["Bcrypt Password Hashing (10 Rounds)"]
+        CryptoEngine["Node.js Crypto (HMAC-SHA256 Signatures)"]
+    end
+
+    subgraph DataTier["5. Data Persistence Tier"]
+        direction TB
+        MongooseODM["Mongoose ODM (Schema & Validation)"]
+        MongoDBDatabase[("MongoDB Database (Local / Atlas Cloud)")]
+        
+        MongooseODM --> MongoDBDatabase
+    end
+
+    AxiosClient -->|HTTP / REST Requests| ViteProxy
+    RBACGuard --> ControllerTier
+    ControllerTier --> MongooseODM
+    
+    BookingEngine --> QREngine
+    PaymentEngine --> RazorpaySDK
+    PaymentEngine --> CryptoEngine
+    AuthCtrl --> BcryptModule
 ```
 
-### Frontend Architecture Details
-- **Entry Point**: `src/main.jsx` initializes React root and loads `src/index.css`.
-- **State & Context**: `src/context/AuthContext.jsx` manages user login state, token persistence in `localStorage`, role resolution, and login/logout actions.
-- **Route Protection**: `src/components/ProtectedRoute.jsx` intercepts unauthorized routes, verifying both active login status and role privileges before rendering protected outlets.
-- **API Proxy**: `frontend/vite.config.js` proxies all `/api` requests to `http://localhost:4000` to eliminate cross-origin issues during local development.
+### 2. End-to-End User Transaction Workflow
 
-### Backend Architecture Details
-- **Entry Point**: `backend/src/server.js` boots Express, connects to MongoDB via `src/config/db.js`, mounts middleware (JSON parser, CORS, Morgan logger), and attaches all routes under `/api`.
-- **Security Middlewares**: 
-  - `protect`: Extracts `Bearer <token>` from headers, verifies token with `JWT_SECRET`, and populates `req.user` without password.
-  - `authorize(...roles)`: Normalizes user role and ensures the requesting user belongs to the allowed role set (with automatic bypass for super-admins).
-- **Concurrency & Transaction Safety**: Seat selection validates unbooked status before pushing into showtime `bookedSeats`, preventing overbooking.
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Customer as User
+    participant Frontend as React Client
+    participant Express as Express API (:4000)
+    participant Razorpay as Razorpay Orders API
+    participant MongoDB as MongoDB Database
+    participant QR as QR Generator
+
+    Customer->>Frontend: Selects Movie Seats or Event Passes
+    Frontend->>Express: POST /api/payments/razorpay/create-order { amount, bookingDetails }
+    Express->>Razorpay: razorpay.orders.create({ amount_in_paise })
+    Razorpay-->>Express: Return Order Object { id: "order_xxx" }
+    Express-->>Frontend: 201 Created { orderId, amount, keyId }
+    
+    Frontend->>Customer: Displays Razorpay Checkout Modal
+    Customer->>Frontend: Completes Payment (Card / UPI / Netbanking)
+    Frontend->>Express: POST /api/payments/razorpay/verify { order_id, payment_id, signature, bookingDetails }
+    
+    Express->>Express: Verify HMAC-SHA256 Signature
+    alt Authentic Signature
+        Express->>MongoDB: Concurrency Check (Verify Seat / Inventory Availability)
+        Express->>QR: Generate Base64 QR Code Passport
+        QR-->>Express: Return data:image/png;base64,...
+        Express->>MongoDB: Save Confirmed Booking & Record Payment
+        Express-->>Frontend: 200 OK { success: true, booking, qrCodeUrl }
+        Frontend-->>Customer: Display Digital Ticket with Scannable QR Code
+    else Invalid Signature
+        Express->>MongoDB: Record Failed Payment Attempt
+        Express-->>Frontend: 400 Bad Request { success: false, message: "Signature verification failed" }
+        Frontend-->>Customer: Show Payment Declined Notification
+    end
+```
 
 ---
 
-## 📁 Complete Folder Structure
+## 📁 Complete Directory Structure
 
 ```text
 minnor/
-├── README.md                      # Comprehensive project documentation
-├── ARCHITECTURE.md                # System architecture, Mermaid & ER diagrams
-├── API_KEYS_GUIDE.md              # Detailed API key provisioning instructions
-├── .gitignore                     # Git ignore rules for node_modules and .env
+├── README.md                      # Authoritative project documentation & setup guide
+├── ARCHITECTURE.md                # System architecture, Mermaid diagrams & ER schemas
+├── API_KEYS_GUIDE.md              # Detailed API key provisioning & environment instructions
+├── .gitignore                     # Git ignore rules for node_modules, build, and .env
 │
 ├── backend/
-│   ├── .env                       # Backend environment file (ignored by git)
-│   ├── .env.example               # Template for environment variables
-│   ├── package.json               # Backend dependencies & script definitions
-│   ├── package-lock.json          # Locked dependency tree
+│   ├── .env                       # Backend environment variables (ignored by git)
+│   ├── .env.example               # Template for backend environment variables
+│   ├── package.json               # Backend dependencies, scripts & configuration
+│   ├── package-lock.json          # Locked backend dependency tree
 │   ├── nodemon.json               # Nodemon watcher configuration
-│   ├── seeder.js                  # Basic seed script for initial testing
+│   ├── seeder.js                  # Standard seed script for quick testing
 │   ├── seedDemoData.js            # Comprehensive Bhopal demo dataset seeder
 │   ├── test_razorpay_flow.js      # Automated Razorpay integration test runner
 │   │
 │   └── src/
-│       ├── server.js              # Express app bootstrap & listener
+│       ├── server.js              # Express application bootstrap & route mounting
 │       │
 │       ├── config/
-│       │   └── db.js              # Mongoose MongoDB connection handler
+│       │   └── db.js              # Mongoose MongoDB connection establishment
 │       │
 │       ├── middleware/
-│       │   └── auth.js            # protect, authorize, and normalizeRole guards
+│       │   ├── auth.js            # protect, authorize, and normalizeRole middleware
+│       │   └── errorHandler.js    # Global error response handler
 │       │
 │       ├── models/
-│       │   ├── User.js            # User accounts & RBAC roles
-│       │   ├── Movie.js           # Movie listings & showtimes
+│       │   ├── User.js            # User credentials, RBAC roles & wishlists
+│       │   ├── Movie.js           # Movie catalog, showtimes & booked seat tracking
 │       │   ├── Theatre.js         # Multiplexes, screens & seat tiers
-│       │   ├── Event.js           # Live events, categories & inventory
-│       │   ├── Hall.js            # Banquet halls & rental venues
-│       │   ├── Manager.js         # Event manager portfolios
-│       │   ├── Booking.js         # Confirmed bookings & QR payload
-│       │   ├── Payment.js         # Payment transaction ledger
-│       │   ├── Review.js          # Polymorphic ratings & comments
+│       │   ├── Event.js           # Live events, categories & remaining pass counters
+│       │   ├── Hall.js            # Banquet halls, rental rates & venue amenities
+│       │   ├── Manager.js         # Event manager portfolios & daily fees
+│       │   ├── Booking.js         # Confirmed bookings, seat numbers & QR payload
+│       │   ├── Payment.js         # Razorpay transaction ledger & signatures
+│       │   ├── Review.js          # Polymorphic ratings & comments (refPath)
 │       │   └── PlatformSetting.js # Global system configurations
 │       │
 │       ├── routes/
-│       │   ├── index.js           # Central route aggregator
-│       │   ├── authRoutes.js      # Register & login routes
+│       │   ├── index.js           # Central route aggregator mounting under /api
+│       │   ├── authRoutes.js      # Registration & authentication routes
 │       │   ├── userRoutes.js      # Profile, wishlist & user administration
 │       │   ├── movieRoutes.js     # Movie catalog & showtime endpoints
 │       │   ├── theatreRoutes.js   # Multiplex screen & venue endpoints
@@ -291,7 +350,7 @@ minnor/
         ├── index.css              # Tailwind directives & global styling
         │
         ├── api/
-        │   └── client.js          # Axios instance configured with auth headers
+        │   └── api.js             # Axios instance configured with auth headers
         │
         ├── context/
         │   └── AuthContext.jsx    # React Context for authentication & user state
@@ -357,8 +416,8 @@ Ensure the following tools are installed on your workstation:
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/your-username/minnor.git
-cd minnor
+git clone https://github.com/Dikesh2006/hyper-local-event--hub.git
+cd hyper-local-event--hub
 ```
 
 ---
@@ -392,7 +451,7 @@ cd minnor
 
 5. Seed the database with demonstration data:
    ```bash
-   # Option A: Fast basic seeder (Creates Admin, 2 Movies, 2 Events, 2 Halls, 2 Managers)
+   # Option A: Quick basic seeder (Creates Admin, 2 Movies, 2 Events, 2 Halls, 2 Managers)
    npm run seed
 
    # Option B: Rich Bhopal demonstration dataset (Multiplexes, Seating tiers, Multi-role accounts)
@@ -469,329 +528,99 @@ cd minnor
 
 ---
 
-## 🗄️ MongoDB Schemas & Data Models
+## 🗄️ Database Schemas & Entity Relationships
 
-The system architecture utilizes **10 distinct Mongoose models** to represent all business entities:
-
-### 1. `User` Model (`backend/src/models/User.js`)
-Handles identity, credentials, roles, and user state.
-```javascript
-{
-  name: { type: String, required: true },
-  email: { type: String, required: true, unique: true, lowercase: true },
-  password: { type: String, required: true },
-  role: {
-    type: String,
-    enum: ['user', 'eventManager', 'manager', 'organizer', 'hotelOwner', 'hallOwner', 'hall_owner', 'theatreOwner', 'admin'],
-    default: 'user'
-  },
-  city: { type: String },
-  phone: { type: String },
-  status: { type: String, enum: ['pending', 'approved', 'suspended'], default: 'approved' },
-  favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event' }],
-  wishlist: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Event' }]
-}
-```
-*Pre-save Hook*: Automatically generates salt with 10 rounds and hashes passwords via `bcrypt.hash`.  
-*Instance Method*: `matchPassword(enteredPassword)` compares plaintext against stored hash.
-
-### 2. `Movie` Model (`backend/src/models/Movie.js`)
-Manages movie catalog information, showtimes, and booked seats.
-```javascript
-{
-  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  genre: { type: String },
-  duration: { type: Number },
-  language: { type: String },
-  posterUrl: { type: String },
-  images: [{ type: String }],
-  releaseDate: { type: Date },
-  showtimes: [{
-    time: String,
-    price: Number,
-    availableSeats: Number,
-    screen: String,
-    date: Date,
-    theatreId: { type: mongoose.Schema.Types.ObjectId, ref: 'Theatre' },
-    theatreName: String,
-    bookedSeats: [{ type: String }] // e.g. ["A1", "A2", "B5"]
-  }],
-  city: { type: String, default: 'Bhopal' },
-  theatreName: { type: String },
-  theatre: { type: mongoose.Schema.Types.ObjectId, ref: 'Theatre' },
-  rating: { type: Number, default: 4.2 },
-  category: { type: String, default: 'movie' },
-  published: { type: Boolean, default: true }
-}
-```
-
-### 3. `Theatre` Model (`backend/src/models/Theatre.js`)
-Defines physical multiplex venues, screen specifications, and seat tiers.
-```javascript
-{
-  name: { type: String, required: true },
-  city: { type: String, required: true },
-  address: { type: String, required: true },
-  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  screens: [{
-    name: { type: String, required: true },
-    capacity: { type: Number, default: 80 },
-    rows: { type: Number, default: 8 },
-    cols: { type: Number, default: 10 },
-    seatTiers: [{
-      name: { type: String, default: 'Standard' },
-      price: { type: Number, default: 250 },
-      rows: [{ type: String }]
-    }]
-  }],
-  amenities: [{ type: String }],
-  description: { type: String },
-  rating: { type: Number, default: 4.5 },
-  status: { type: String, enum: ['active', 'inactive', 'maintenance'], default: 'active' },
-  imageUrl: { type: String }
-}
-```
-
-### 4. `Event` Model (`backend/src/models/Event.js`)
-Handles live events, concerts, comedy specials, and inventory.
-```javascript
-{
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  category: { 
-    type: String, 
-    enum: ['concert', 'sports', 'comedy', 'college', 'festival', 'movie', 'hotel', 'theatre'], 
-    default: 'concert' 
-  },
-  city: { type: String, required: true },
-  venue: { type: String },
-  startDate: { type: Date, required: true },
-  endDate: { type: Date },
-  ticketPrice: { type: Number, required: true },
-  imageUrl: { type: String },
-  bannerUrl: { type: String },
-  galleryImages: [{ type: String }],
-  organizer: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  seatsAvailable: { type: Number, default: 200 },
-  capacity: { type: Number, default: 200 },
-  time: { type: String },
-  published: { type: Boolean, default: true },
-  approved: { type: Boolean, default: false },
-  featured: { type: Boolean, default: false },
-  analytics: {
-    views: { type: Number, default: 0 },
-    bookings: { type: Number, default: 0 }
-  }
-}
-```
-
-### 5. `Hall` Model (`backend/src/models/Hall.js`)
-Models banquet venues, party halls, and meeting spaces.
-```javascript
-{
-  name: { type: String, required: true },
-  city: { type: String, required: true },
-  address: { type: String, required: true },
-  capacity: { type: Number, required: true },
-  hourlyRate: { type: Number, required: true },
-  pricePerNight: { type: Number },
-  images: [{ type: String }],
-  availability: [{ date: Date, slots: [String], booked: { type: Boolean, default: false } }],
-  amenities: [{ type: String }],
-  rooms: [{ type: String }],
-  type: { type: String, enum: ['hotel', 'theatre', 'venue'], default: 'hotel' },
-  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  approved: { type: Boolean, default: false },
-  published: { type: Boolean, default: true },
-  featured: { type: Boolean, default: false },
-  rating: { type: Number, default: 4.6 },
-  description: { type: String }
-}
-```
-
-### 6. `Manager` Model (`backend/src/models/Manager.js`)
-Professional event planner portfolios.
-```javascript
-{
-  name: { type: String, required: true },
-  city: { type: String, required: true },
-  expertise: { type: String, required: true },
-  pricePerEvent: { type: Number, required: true },
-  rating: { type: Number, default: 4.8 },
-  imageUrl: { type: String },
-  bio: { type: String },
-  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
-  contact: { type: String }
-}
-```
-
-### 7. `Booking` Model (`backend/src/models/Booking.js`)
-The central transaction record uniting customers, items, seats, and digital tickets.
-```javascript
-{
-  ticketId: { type: String, unique: true, sparse: true },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  itemType: { type: String, enum: ['movie', 'event', 'hall', 'manager'], default: 'movie' },
-  event: { type: mongoose.Schema.Types.ObjectId, ref: 'Event' },
-  movie: { type: mongoose.Schema.Types.ObjectId, ref: 'Movie' },
-  theatre: { type: mongoose.Schema.Types.ObjectId, ref: 'Theatre' },
-  hall: { type: mongoose.Schema.Types.ObjectId, ref: 'Hall' },
-  manager: { type: mongoose.Schema.Types.ObjectId, ref: 'Manager' },
-  date: { type: Date, required: true },
-  showtime: { type: String },
-  screen: { type: String },
-  seats: [{
-    seatNumber: String,
-    price: Number,
-    tier: String
-  }],
-  totalPrice: { type: Number, required: true },
-  status: { type: String, enum: ['pending', 'confirmed', 'cancelled'], default: 'confirmed' },
-  paymentStatus: { type: String, enum: ['pending', 'paid', 'failed'], default: 'paid' },
-  qrCodeUrl: { type: String },
-  payment: { type: mongoose.Schema.Types.ObjectId, ref: 'Payment' }
-}
-```
-
-### 8. `Payment` Model (`backend/src/models/Payment.js`)
-Cryptographic transaction audit trail.
-```javascript
-{
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  booking: { type: mongoose.Schema.Types.ObjectId, ref: 'Booking' },
-  amount: { type: Number, required: true },
-  provider: { type: String, default: 'Razorpay' },
-  status: { type: String, enum: ['pending', 'successful', 'failed'], default: 'pending' },
-  paymentId: { type: String },
-  orderId: { type: String },
-  signature: { type: String }
-}
-```
-
-### 9. `Review` Model (`backend/src/models/Review.js`)
-Polymorphic customer feedback model.
-```javascript
-{
-  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  targetType: { type: String, enum: ['movie', 'event', 'hall', 'manager'], required: true },
-  target: { type: mongoose.Schema.Types.ObjectId, required: true, refPath: 'targetType' },
-  rating: { type: Number, required: true, min: 1, max: 5 },
-  comment: { type: String }
-}
-```
-
-### 10. `PlatformSetting` Model (`backend/src/models/PlatformSetting.js`)
-Global settings document for administrative configuration.
-```javascript
-{
-  settings: { type: mongoose.Schema.Types.Mixed, default: {} }
-}
-```
-
----
-
-## 🔐 Authentication & Security Architecture
-
-The platform implements a stateless JWT-based authentication architecture:
+The data tier is constructed using **Mongoose ODM 7** on top of **MongoDB 7**:
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    actor User as Client Browser
-    participant API as Express API (/api/auth)
-    participant DB as MongoDB (Users)
-    participant Guard as JWT Middleware (protect)
+erDiagram
+    USER ||--o{ BOOKING : "places (user)"
+    USER ||--o{ PAYMENT : "submits (user)"
+    USER ||--o{ REVIEW : "authors (author)"
+    USER ||--o{ EVENT : "hosts (organizer)"
+    USER ||--o{ HALL : "owns (owner)"
+    USER ||--o{ THEATRE : "operates (owner)"
+    USER ||--o{ MOVIE : "publishes (owner)"
 
-    User->>API: POST /api/auth/login { email, password }
-    API->>DB: User.findOne({ email })
-    DB-->>API: Stored user document
-    API->>API: bcrypt.compare(password, user.password)
-    alt Password Valid
-        API->>API: jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '30d' })
-        API-->>User: 200 OK { token, _id, name, email, role }
-        User->>User: Save token in localStorage & AuthContext
-    else Invalid Credentials
-        API-->>User: 401 Unauthorized { message: "Invalid email or password" }
-    end
+    THEATRE ||--o{ MOVIE : "hosts showtimes for"
+    
+    BOOKING ||--|| PAYMENT : "has transaction (payment)"
+    BOOKING ||--o| MOVIE : "reserves (movie)"
+    BOOKING ||--o| EVENT : "reserves (event)"
+    BOOKING ||--o| HALL : "leases (hall)"
+    BOOKING ||--o| MANAGER : "hires (manager)"
+    BOOKING ||--o| THEATRE : "located at (theatre)"
 
-    Note over User, Guard: Subsequent Protected Requests (e.g. /api/bookings)
-    User->>Guard: GET /api/bookings [Header: Authorization: Bearer <token>]
-    Guard->>Guard: jwt.verify(token, JWT_SECRET)
-    Guard->>DB: User.findById(decoded.id).select("-password")
-    DB-->>Guard: User document attached to req.user
-    Guard-->>API: next() -> Controller executes
+    REVIEW }o--|| MOVIE : "reviews (target)"
+    REVIEW }o--|| EVENT : "reviews (target)"
+    REVIEW }o--|| HALL : "reviews (target)"
+    REVIEW }o--|| MANAGER : "reviews (target)"
 ```
+
+### Key Models Overview
+1. **User**: Authentication credentials, roles (`user`, `organizer`, `hallOwner`, `theatreOwner`, `manager`, `admin`), profile details, and event wishlist.
+2. **Movie**: Cinema titles, genres, durations, languages, posters, and embedded `showtimes` (with seat matrix and `bookedSeats` array).
+3. **Theatre**: Multiplex venue information, screen configurations, capacity, and seat tier configurations (VIP Recliners vs. Standard).
+4. **Event**: Live concerts, comedy nights, sports matches, category classifications, ticket pricing, and remaining pass inventory counters.
+5. **Hall**: Banquet venues, capacities, hourly/daily pricing, amenities (AC, Catering, Parking), and booking schedules.
+6. **Manager**: Professional event planner directory profiles, core specialties, daily rates, and client contact info.
+7. **Booking**: Central transaction record storing `ticketId`, reserved seats, item reference, total amount, status, and Base64 QR code ticket.
+8. **Payment**: Cryptographic transaction audit trail preserving Razorpay `orderId`, `paymentId`, and `signature`.
+9. **Review**: Polymorphic ratings and comments implementing dynamic Mongoose `refPath` across movies, events, halls, and managers.
+10. **PlatformSetting**: Global platform configuration variables.
 
 ---
 
-## 👥 User Roles & Access Control (RBAC)
+## 🔐 Authentication, Security & RBAC
 
-The system features granular Role-Based Access Control managed via `backend/src/middleware/auth.js`.
+### Stateless JWT Authentication Flow
+1. **Registration**: Validates email uniqueness, hashes plaintext passwords via `bcryptjs` with 10 salt rounds, sets default status, and issues a 30-day JWT.
+2. **Login**: Verifies credentials using `user.matchPassword(enteredPassword)` and returns signed JWT with user profile.
+3. **Route Guarding (`protect`)**: Middleware intercepts Bearer tokens in `req.headers.authorization`, validates signature via `JWT_SECRET`, and injects `req.user`.
 
-### Role Normalization Logic
-To maintain backwards compatibility across frontends and seeded datasets, the backend normalizes role strings via `normalizeRole`:
+### Role Normalization & RBAC Matrix
+The system normalizes roles dynamically to maintain backwards compatibility:
 - `['user', 'customer']` $\rightarrow$ `user`
 - `['organizer']` $\rightarrow$ `organizer`
 - `['manager', 'eventManager']` $\rightarrow$ `manager`
 - `['hall_owner', 'hallOwner', 'hotelOwner', 'theatreOwner']` $\rightarrow$ `hall_owner`
-- `['admin']` $\rightarrow$ `admin` (Unrestricted access across all endpoints)
+- `['admin']` $\rightarrow$ `admin` (Unrestricted platform access)
 
-### Role Permissions Matrix
-
-| Platform Module | `user` | `organizer` | `hallOwner` | `theatreOwner` | `manager` | `admin` |
+| Feature / Resource | `user` | `organizer` | `hallOwner` | `theatreOwner` | `manager` | `admin` |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Public Browsing (Movies, Events, Halls, Managers)** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Book Tickets & Pay via Razorpay** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **View Own Bookings & Digital QR Passes** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Submit Ratings & Reviews** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Create & Manage Live Events** | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ |
-| **Register & Manage Banquet Halls** | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ |
-| **Create Multiplex Screens & Showtimes** | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ |
-| **Manage Manager Directory Listings** | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ |
-| **Approve / Reject Pending Listings** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **User Role & Status Management** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| **Platform Revenue & Analytics Auditing** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Browse Catalog (Movies, Events, Halls, Managers) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Book Tickets & Pay with Razorpay | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| View Own Bookings & Digital QR Passes | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Submit Ratings & Reviews | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Create & Host Live Events | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ |
+| Register & Manage Banquet Halls | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ |
+| Configure Multiplex Screens & Showtimes | ❌ | ❌ | ❌ | ✅ | ❌ | ✅ |
+| Manage Manager Directory Listings | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ |
+| Approve / Reject Pending Listings | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Manage Platform Users & Roles | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Audit Platform Revenue & Analytics | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
 
 ---
 
-## 🎬 Movie Booking & Seat Matrix Engine
+## 🎬 Module 1: Multiplex Movie Booking & Seat Engine
 
 Movie ticketing in **Hyper Local Event Hub** is built with concurrency control:
-
-1. **Multiplex & Showtime Selection**: The user selects a movie, date, and preferred showtime slot (e.g., `07:00 PM` in `Screen 1`).
+1. **Showtime Selection**: Select movie title, date, screen, and time slot.
 2. **Visual Seat Matrix**:
-   - **Row A & B**: Classified as **VIP Recliner Loungers** (Base price + ₹100).
-   - **Row C to H**: Classified as **Standard Club Seats** (Base price, e.g., ₹250).
-   - Already booked seats are visually disabled based on the showtime's `bookedSeats` array.
-3. **Seat Concurrency Validation**:
-   ```javascript
-   // backend/src/controllers/bookingController.js
-   const alreadyBooked = requestedSeatNumbers.filter((s) => matchedShowtime.bookedSeats.includes(s));
-   if (alreadyBooked.length > 0) {
-     const err = new Error(`Seat(s) ${alreadyBooked.join(', ')} are already booked.`);
-     err.statusCode = 400;
-     throw err;
-   }
-   ```
-4. **Atomic Booking Confirmation**:
-   - `bookedSeats` is updated with the selected seat numbers.
-   - `availableSeats` is decremented by the seat count.
-   - A Base64 QR code ticket is generated immediately containing the seat identifiers and show details.
-5. **Seat Restoration on Cancellation**:
-   - If a booking is cancelled (`PUT /api/bookings/:id/cancel`), the seats are filtered out from `bookedSeats` and `availableSeats` is restored.
+   - **Row A & B**: **VIP Recliner Loungers** (Base price + ₹100).
+   - **Row C to H**: **Standard Club Seats** (Base price, e.g. ₹250).
+   - Reserved seats are dynamically disabled from the showtime's `bookedSeats` array.
+3. **Seat Concurrency Validation**: The backend checks for duplicate seat claims before confirming.
+4. **Atomic Booking Confirmation**: `bookedSeats` updates atomically, and available seats are decremented.
+5. **Seat Restoration on Cancellation**: Cancelling a booking removes seats from `bookedSeats` and restores availability immediately.
 
 ---
 
-## 🎟️ Event Booking & Live Inventory Engine
+## 🎟️ Module 2: Live Event Discovery & Pass Inventory
 
-Event ticketing caters to concerts, college festivals, comedy clubs, and sports tournaments:
-
+Event ticketing caters to concerts, college festivals, comedy clubs, and tournaments:
 1. **Category Filtering**: Real-time filtering by category (`concert`, `sports`, `comedy`, `college`, `festival`).
-2. **Pass Inventory Verification**:
-   - The booking controller verifies that `event.seatsAvailable >= requestedCount`.
-   - If passes are depleted, an HTTP 400 error is returned.
+2. **Pass Inventory Verification**: Verifies `event.seatsAvailable >= requestedCount`.
 3. **Atomic Inventory Decrement**:
    ```javascript
    await Event.findByIdAndUpdate(eventId, {
@@ -801,116 +630,88 @@ Event ticketing caters to concerts, college festivals, comedy clubs, and sports 
      },
    });
    ```
-4. **Digital Pass QR Issuance**: Each event attendee receives a unique Base64 verification pass with `ticketId` formatted as `TKT-<TIMESTAMP>-<RANDOM>`.
+4. **Pass Restoration**: Cancellations restore pass count atomically via `$inc: { seatsAvailable: count }`.
 
 ---
 
-## 🏛️ Banquet Hall & Venue Reservation
+## 🏛️ Module 3: Banquet Hall & Venue Reservation
 
-The venue leasing engine enables users to book banquet halls, luxury hotel lawns, and conference venues:
-
+The venue leasing engine enables users to book banquet halls, luxury lawns, and conference centres:
 1. **Venue Details & Capacity**: View indoor/outdoor capacities, hourly rates, per-night rates, address, and amenities (Catering, Stage, High-Speed WiFi, Sound Setup).
 2. **Slot Selection**: Choose rental dates and reserve venues for personal ceremonies or corporate conferences.
 3. **Owner Approvals & Moderation**: Newly listed halls by `hallOwner` users enter a `pending` state until verified by the platform super-admin (`PUT /api/admin/halls/:id/status`).
 
 ---
 
-## 🧑‍💼 Event Manager Hiring System
+## 🧑‍💼 Module 4: Certified Event Manager Hiring
 
 For users seeking professional planners to coordinate weddings, corporate galas, or concerts:
-
 1. **Coordinator Directory**: Browse certified managers with details on their city, years of experience, expertise, and daily rates.
 2. **Direct Booking Request**: Select date, event type, and special supervision requests.
 3. **Client Contract Generation**: Creates a confirmed booking linked to the manager profile with full contact details and date scheduling.
 
 ---
 
-## ⭐ Customer Review & Rating Engine
+## 📱 Module 5: Cryptographic QR Code Digital Passports
 
-The platform features a polymorphic review engine where any customer can review movies, events, halls, or managers:
-
-- **Endpoint**: `POST /api/reviews`
-- **Request Body**:
-  ```json
-  {
-    "targetType": "movie",
-    "target": "654c123456789abcdef01234",
-    "rating": 5,
-    "comment": "Incredible Dolby Atmos sound and ultra-comfortable recliner seating!"
-  }
-  ```
-- **Query Filter**: `GET /api/reviews?targetType=movie&target=654c123456789abcdef01234` returns only reviews for that specific resource with populated author names.
+Every confirmed booking automatically generates a Base64-encoded QR code containing verifiable metadata:
+- **Unique Ticket ID**: Formatted as `TKT-<TIMESTAMP>-<RANDOM>`.
+- **Payload Data**: Encodes Ticket ID, User ID, Booking Reference, Item Title, Showtime / Date, Seat Numbers, and Total Price.
+- **Client Rendering**: Displayed in the customer dashboard with one-click print and offline save options.
+- **Tamper Protection**: Ensures tickets can be scanned and verified at the venue gate without server re-computation.
 
 ---
 
-## 💳 Payment Gateway & Razorpay Test Mode Flow
+## 💳 Module 6: Razorpay Payment Gateway & HMAC-SHA256 Flow
 
-The application provides an enterprise-grade payment flow utilizing the **Razorpay Test Mode API** with cryptographic signature checks:
+The platform implements an enterprise-grade checkout flow utilizing the **Razorpay Test Mode API**:
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Customer as User / Browser
-    participant React as React PaymentPage
-    participant API as Express API Server
-    participant RazorpaySDK as Razorpay Orders API
-    participant DB as MongoDB
+1. **Order Creation (`POST /api/payments/razorpay/create-order`)**:
+   - Converts INR amounts to paise (e.g., ₹500 $\rightarrow$ 50,000 paise).
+   - Generates an official Razorpay Order ID.
+2. **Client Checkout Modal**:
+   - Razorpay Checkout mounts inside the browser supporting Cards, UPI, Netbanking, and Wallets.
+3. **Cryptographic Signature Verification (`POST /api/payments/razorpay/verify`)**:
+   - Verifies signature using HMAC-SHA256:
+   ```javascript
+   const crypto = require('crypto');
+   const expectedSignature = crypto
+     .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
+     .update(`${orderId}|${paymentId}`)
+     .digest('hex');
+   const isValid = expectedSignature === signature;
+   ```
+4. **Developer Test Mode Fallback**:
+   - If Razorpay API keys are not supplied or contain placeholders, the platform smoothly transitions into mock mode, permitting end-to-end testing without external network dependencies.
 
-    Customer->>React: Clicks "Pay with Razorpay"
-    React->>API: POST /api/payments/razorpay/create-order { amount: 500, bookingDetails }
-    API->>RazorpaySDK: razorpay.orders.create({ amount: 50000, currency: "INR" })
-    RazorpaySDK-->>API: Return Order Object { id: "order_xyz", amount: 50000 }
-    API-->>React: 201 Created { orderId: "order_xyz", amount: 50000, keyId }
-    
-    React->>Customer: Opens Razorpay Checkout Modal
-    Customer->>React: Completes payment (Card / UPI / Netbanking)
-    React->>API: POST /api/payments/razorpay/verify { razorpay_order_id, razorpay_payment_id, razorpay_signature, bookingDetails }
-    
-    API->>API: Compute HMAC-SHA256(order_id + "|" + payment_id, RAZORPAY_KEY_SECRET)
-    alt Signature Matches
-        API->>API: processBookingCreation()
-        API->>API: Generate Base64 QR Code Ticket
-        API->>DB: Save Booking & Payment (status: "successful")
-        API-->>React: 200 OK { success: true, booking, ticket }
-        React-->>Customer: Display Confirmed Ticket with QR Code
-    else Signature Mismatch
-        API->>DB: Record Payment (status: "failed")
-        API-->>React: 400 Bad Request { success: false, message: "Invalid signature" }
-        React-->>Customer: Display Payment Error Banner
-    end
-```
+---
 
-### Signature Verification Code Pattern
+## ⭐ Module 7: Polymorphic Ratings & Feedback Engine
+
+The platform features a polymorphic review engine where any customer can review movies, events, halls, or managers using Mongoose dynamic `refPath`:
+
 ```javascript
-// backend/src/utils/razorpay.js
-const crypto = require('crypto');
-
-const verifyRazorpaySignature = ({ orderId, paymentId, signature }) => {
-  const secret = process.env.RAZORPAY_KEY_SECRET;
-  const expectedSignature = crypto
-    .createHmac('sha256', secret)
-    .update(`${orderId}|${paymentId}`)
-    .digest('hex');
-    
-  return expectedSignature === signature;
-};
+// backend/src/models/Review.js
+{
+  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  targetType: { type: String, enum: ['movie', 'event', 'hall', 'manager'], required: true },
+  target: { type: mongoose.Schema.Types.ObjectId, required: true, refPath: 'targetType' },
+  rating: { type: Number, required: true, min: 1, max: 5 },
+  comment: { type: String }
+}
 ```
 
-### Developer Test Mode & Demo Fallback
-If `RAZORPAY_KEY_ID` or `RAZORPAY_KEY_SECRET` are not set or contain placeholder text:
-- The server automatically switches to **Mock Test Mode**.
-- It generates a valid simulated order and pre-computed HMAC signature.
-- Unit tests and UI flows succeed seamlessly without requiring live payment credentials.
+- **Querying Reviews**: `GET /api/reviews?targetType=movie&target=<ID>` dynamically populates reviews and author profiles.
 
 ---
 
-## 📊 Admin & Role Dashboards
+## 📊 Module 8: Business Intelligence & Multi-Role Dashboards
 
 ### 1. Super-Admin Dashboard (`/admin/*`)
-- **Live Statistics Overview**: Total registered users, active events, registered venues, total bookings, and pending approval queues.
-- **Listing Approvals**: Approve or reject newly registered events (`PUT /api/admin/events/:id/approve`) and banquet halls (`PUT /api/admin/halls/:id/status`).
-- **User & Role Administration**: Update user statuses (`approved`, `suspended`) or promote users to managers/organizers.
-- **Revenue Audit Ledger**: View all confirmed transactions and calculate platform-wide gross revenue.
+- **Live Platform Metrics**: Real-time counters for users, events, halls, bookings, and revenue.
+- **Listing Approvals**: Approve or reject newly submitted events and banquet halls.
+- **User Role Management**: Change user roles, approve host accounts, or suspend bad actors.
+- **Financial Audit Ledger**: Comprehensive view of all completed transactions and gross earnings.
 
 ### 2. Organizer Dashboard (`/organizer/dashboard`)
 - Real-time booking counts and attendee check-in summaries.
@@ -939,8 +740,6 @@ If `RAZORPAY_KEY_ID` or `RAZORPAY_KEY_SECRET` are not set or contain placeholder
 | `POST` | `/api/auth/register` | Public | Register new user account with role |
 | `POST` | `/api/auth/login` | Public | Authenticate user & return JWT token |
 
----
-
 ### 👤 User Profile & Wishlist (`/api/users`)
 | Method | Path | Auth Level | Description |
 |---|---|---|---|
@@ -954,43 +753,35 @@ If `RAZORPAY_KEY_ID` or `RAZORPAY_KEY_SECRET` are not set or contain placeholder
 | `PUT` | `/api/users/:id/role` | Protected (`admin`) | Update user role |
 | `DELETE`| `/api/users/:id` | Protected (`admin`) | Delete user account |
 
----
-
 ### 🎬 Movies & Showtimes (`/api/movies`)
 | Method | Path | Auth Level | Description |
 |---|---|---|---|
-| `GET` | `/api/movies` | Public | List all published movies (with search & city filter) |
-| `GET` | `/api/movies/me` | Protected (Host/Admin) | List movies managed by authenticated user |
-| `GET` | `/api/movies/:id` | Public | Get single movie details with showtimes and booked seats |
+| `GET` | `/api/movies` | Public | List all published movies |
+| `GET` | `/api/movies/me` | Protected (Host/Admin) | List movies managed by current user |
+| `GET` | `/api/movies/:id` | Public | Get single movie details with showtimes |
 | `POST` | `/api/movies` | Protected (Host/Admin) | Create a new movie listing |
 | `PUT` | `/api/movies/:id` | Protected (Host/Admin) | Update movie details or showtimes |
 | `DELETE`| `/api/movies/:id` | Protected (Host/Admin) | Delete movie listing |
 
----
-
 ### 🏛️ Multiplexes & Theatres (`/api/theatres`)
 | Method | Path | Auth Level | Description |
 |---|---|---|---|
-| `GET` | `/api/theatres/public` | Public | List all active multiplexes in the city |
-| `GET` | `/api/theatres/me` | Protected (TheatreOwner) | Get theatres owned by current user |
+| `GET` | `/api/theatres/public` | Public | List active multiplexes by city |
+| `GET` | `/api/theatres/me` | Protected (TheatreOwner) | Get theatres owned by current operator |
 | `GET` | `/api/theatres/:id` | Public | Get single theatre specifications & screens |
 | `POST` | `/api/theatres` | Protected (TheatreOwner) | Register a new theatre/multiplex |
 | `PUT` | `/api/theatres/:id` | Protected (TheatreOwner) | Update theatre screens & seat tiers |
 | `DELETE`| `/api/theatres/:id` | Protected (TheatreOwner) | Remove theatre listing |
 
----
-
 ### 🎟️ Live Events (`/api/events`)
 | Method | Path | Auth Level | Description |
 |---|---|---|---|
-| `GET` | `/api/events` | Public | List events with category, city, and search filters |
+| `GET` | `/api/events` | Public | List events with category, city, and date filters |
 | `GET` | `/api/events/me` | Protected (Organizer/Admin) | Get events created by logged-in organizer |
-| `GET` | `/api/events/:id` | Public | Get event details, venue, time, and available passes |
+| `GET` | `/api/events/:id` | Public | Get event details and remaining passes |
 | `POST` | `/api/events` | Protected (Organizer/Admin) | Create new live event |
 | `PUT` | `/api/events/:id` | Protected (Organizer/Admin) | Update event details |
 | `DELETE`| `/api/events/:id` | Protected (Organizer/Admin) | Delete event listing |
-
----
 
 ### 🏛️ Banquet Halls & Venues (`/api/halls`)
 | Method | Path | Auth Level | Description |
@@ -1002,18 +793,14 @@ If `RAZORPAY_KEY_ID` or `RAZORPAY_KEY_SECRET` are not set or contain placeholder
 | `PUT` | `/api/halls/:id` | Protected (HallOwner/Admin)| Update hall details |
 | `DELETE`| `/api/halls/:id` | Protected (HallOwner/Admin)| Delete hall listing |
 
----
-
 ### 🧑‍💼 Event Managers (`/api/managers`)
 | Method | Path | Auth Level | Description |
 |---|---|---|---|
 | `GET` | `/api/managers` | Public | List event managers with expertise & city filter |
-| `GET` | `/api/managers/:id` | Public | Get manager profile, portfolio bio, and rates |
+| `GET` | `/api/managers/:id` | Public | Get manager profile, portfolio, and rates |
 | `POST` | `/api/managers` | Protected (Organizer/Admin)| Register manager profile |
 | `PUT` | `/api/managers/:id` | Protected (Organizer/Admin)| Update manager profile |
 | `DELETE`| `/api/managers/:id` | Protected (`admin`) | Remove manager profile |
-
----
 
 ### 🎟️ Bookings & Digital Tickets (`/api/bookings`)
 | Method | Path | Auth Level | Description |
@@ -1022,8 +809,6 @@ If `RAZORPAY_KEY_ID` or `RAZORPAY_KEY_SECRET` are not set or contain placeholder
 | `GET` | `/api/bookings/:id` | Protected (`user`) | Get booking details & verification QR code |
 | `POST` | `/api/bookings` | Protected (`user`) | Create booking, validate seats & generate ticket |
 | `PUT` | `/api/bookings/:id/cancel`| Protected (`user`) | Cancel booking & release reserved seats |
-
----
 
 ### 💳 Payments & Razorpay (`/api/payments`)
 | Method | Path | Auth Level | Description |
@@ -1035,15 +820,11 @@ If `RAZORPAY_KEY_ID` or `RAZORPAY_KEY_SECRET` are not set or contain placeholder
 | `POST` | `/api/payments/create` | Protected (`user`) | Record direct transaction (legacy/mock) |
 | `GET` | `/api/payments` | Protected (`user`/Admin) | Get payment history (Admin views all) |
 
----
-
 ### ⭐ Reviews & Feedback (`/api/reviews`)
 | Method | Path | Auth Level | Description |
 |---|---|---|---|
 | `GET` | `/api/reviews` | Public | List reviews (filter by `targetType` & `target`) |
 | `POST` | `/api/reviews` | Protected (`user`) | Submit review and star rating (1 to 5) |
-
----
 
 ### 🛡️ Super-Admin Management (`/api/admin`)
 | Method | Path | Auth Level | Description |
@@ -1061,20 +842,12 @@ If `RAZORPAY_KEY_ID` or `RAZORPAY_KEY_SECRET` are not set or contain placeholder
 
 ## 🧪 Testing & Seeding Utilities
 
-The project includes pre-configured CLI testing utilities:
-
-### 1. Run Automated Razorpay Integration Tests
-To test the complete Razorpay test order creation, cryptographic HMAC-SHA256 signature verification, and automated Base64 QR ticket generation in the backend:
+### 1. Automated Razorpay Integration Test
+Verify the complete payment lifecycle, HMAC-SHA256 signature verification, and Base64 QR ticket generation:
 ```bash
 cd backend
 npm run test:razorpay
 ```
-**Test Workflow Verified**:
-- `GET /api/payments/config` status check.
-- Automatic registration and login of an ephemeral test customer.
-- Order creation (`POST /api/payments/razorpay/create-order`).
-- Signature verification with tamper detection test (`POST /api/payments/razorpay/verify`).
-- Verification that ticket Base64 QR codes are properly generated and attached.
 
 ### 2. Database Seeding Commands
 ```bash
@@ -1084,6 +857,22 @@ npm run seed
 # Seed full demonstration dataset (Bhopal multiplexes, seating layouts, multi-role users)
 npm run seed:demo
 ```
+
+---
+
+## 👥 Pre-Seeded Demo Credentials
+
+When running `npm run seed:demo`, the database is populated with the following test accounts:
+
+| Role | Name | Email | Password | Access Level |
+|---|---|---|---|---|
+| **Super Admin** | Super Admin | `admin@hyperlocal.com` | `AdminPassword@2026` | Full platform control, approvals, users & revenue analytics |
+| **Theatre Owner** | Rajesh Verma | `theatre.admin@bhopalcinema.com` | `TheatreAdmin@2026` | Multiplex screens, showtimes & seat configurations |
+| **Event Organizer** | Pooja Saxena | `organizer@bhopalevents.com` | `OrganizerPass@2026` | Live event creation, ticketing & attendee metrics |
+| **Hall Owner** | Vikram Singh | `hallowner@bhopalvenues.com` | `HallOwnerPass@2026` | Banquet hall listings, rental rates & calendar |
+| **Regular User** | Aman Sharma | `student.demo@bhopal.edu` | `StudentDemo@2026` | Customer seat booking, reviews & digital QR tickets |
+
+*(If using the basic `npm run seed`, the default password for all test accounts is `password123` or `admin123`).*
 
 ---
 
@@ -1108,10 +897,10 @@ npm run seed:demo
 - **Cause**: A background Node or Vite process is already holding the port.
 - **Solution (Windows PowerShell)**:
   ```powershell
-  # Find process occupying port 4000
+  # Find and kill process on port 4000
   Get-Process -Id (Get-NetTCPConnection -LocalPort 4000).OwningProcess | Stop-Process -Force
   
-  # Find process occupying port 3000
+  # Find and kill process on port 3000
   Get-Process -Id (Get-NetTCPConnection -LocalPort 3000).OwningProcess | Stop-Process -Force
   ```
 
@@ -1119,39 +908,40 @@ npm run seed:demo
 - **Cause**: `RAZORPAY_KEY_SECRET` in `backend/.env` does not match the secret of the Key ID generating the checkout in the frontend.
 - **Solution**:
   - Ensure `RAZORPAY_KEY_ID` in `frontend/.env` matches `RAZORPAY_KEY_ID` in `backend/.env`.
-  - Ensure `RAZORPAY_KEY_SECRET` is correctly copied from your Razorpay Dashboard (Settings $\rightarrow$ API Keys).
+  - Ensure `RAZORPAY_KEY_SECRET` is correctly copied from your Razorpay Dashboard.
   - If testing without keys, leave the values blank or as default placeholders; the built-in mock fallback will handle verification automatically.
 
-### 5. "Seat already booked" Error During Checkout
-- **Cause**: Another user has selected or purchased the same seat for that specific showtime.
-- **Solution**:
-  - Refresh the Movie Booking Page to load the updated `bookedSeats` layout and select an unreserved seat.
+---
+
+## 🤝 Contributing & GitHub Workflow
+
+Contributions, feature suggestions, and bug reports are welcome! Follow these steps to submit your contributions:
+
+1. **Fork the Repository**: Click the **Fork** button at the top right of the repository page.
+2. **Create a Feature Branch**:
+   ```bash
+   git checkout -b feature/amazing-feature
+   # or for documentation improvements:
+   git checkout -b docs/project-improvements
+   ```
+3. **Commit Your Changes**:
+   ```bash
+   git commit -m "docs: enhance README with architectural diagrams, modules, and setup guide"
+   ```
+4. **Push to Your Branch**:
+   ```bash
+   git push origin docs/project-improvements
+   ```
+5. **Open a Pull Request**: Submit a Pull Request targeting the `main` branch. Describe your changes clearly in the PR description.
+
+> [!TIP]
+> Opening and merging meaningful Pull Requests helps earn the **GitHub Pull Shark** achievement badge! 🦈
 
 ---
 
-## 👥 Demo Credentials Reference
+## 📄 Documentation Links & License
 
-When running `npm run seed:demo`, the database is populated with the following test accounts:
+- [📐 System Architecture, Component & ER Diagrams (ARCHITECTURE.md)](ARCHITECTURE.md)
+- [🔑 API Keys & Environment Variables Setup Guide (API_KEYS_GUIDE.md)](API_KEYS_GUIDE.md)
 
-| Role | Name | Email | Password | Access Level |
-|---|---|---|---|---|
-| **Super Admin** | Super Admin | `admin@hyperlocal.com` | `AdminPassword@2026` | Full platform control, approvals, users & revenue analytics |
-| **Theatre Owner** | Rajesh Verma | `theatre.admin@bhopalcinema.com` | `TheatreAdmin@2026` | Multiplex screens, showtimes & seat configurations |
-| **Event Organizer** | Pooja Saxena | `organizer@bhopalevents.com` | `OrganizerPass@2026` | Live event creation, ticketing & attendee metrics |
-| **Hall Owner** | Vikram Singh | `hallowner@bhopalvenues.com` | `HallOwnerPass@2026` | Banquet hall listings, rental rates & calendar |
-| **Regular User** | Aman Sharma | `student.demo@bhopal.edu` | `StudentDemo@2026` | Customer seat booking, reviews & digital QR tickets |
-
-*(If running the standard `npm run seed`, the default password for all test accounts is `password123` or `admin123`).*
-
----
-
-## 📄 Documentation Links
-
-- [📐 System Architecture, Component & ER Diagrams (ARCHITECTURE.md)](file:///c:/Users/HP/OneDrive/Desktop/minnor/ARCHITECTURE.md)
-- [🔑 API Keys & Environment Variables Setup Guide (API_KEYS_GUIDE.md)](file:///c:/Users/HP/OneDrive/Desktop/minnor/API_KEYS_GUIDE.md)
-
----
-
-## 📜 License
-
-This minor project is built for educational and academic submission purposes under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
