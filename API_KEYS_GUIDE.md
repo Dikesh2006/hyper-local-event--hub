@@ -101,6 +101,22 @@ CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
 ---
 
+## 🛡️ Production Deployment & Security Hardening Checklist
+
+Before deploying Hyper Local Event Hub to production (e.g. Render, Railway, AWS, or Vercel):
+
+- [ ] **Enforce `NODE_ENV=production`**: Ensures Express suppresses verbose error stack traces in API responses.
+- [ ] **Rotate JWT Secret**: Use a cryptographically strong 256-bit random key generated via `crypto.randomBytes(32).toString('hex')`. Never commit or reuse development secrets.
+- [ ] **Restrict MongoDB Atlas Network Access**: Remove open `0.0.0.0/0` IP rules and restrict incoming connections to your production server's static IP or cloud provider VPC.
+- [ ] **Switch Razorpay to Live Mode**:
+  - Replace `rzp_test_...` with live `rzp_live_...` Key ID and Secret.
+  - Update `VITE_RAZORPAY_KEY_ID` in your frontend environment settings.
+- [ ] **Never Expose Secrets in Frontend Bundles**: Ensure `RAZORPAY_KEY_SECRET` and `JWT_SECRET` are strictly kept in `backend/.env`. Vite embeds any variable prefixed with `VITE_` into client-side JS bundles.
+- [ ] **CORS Origin Whitelisting**: Configure backend CORS middleware to accept requests only from your verified production domain (e.g., `https://youreventhub.com`).
+- [ ] **Database Backup Strategy**: Enable automated point-in-time recovery (PITR) or daily snapshot policies in MongoDB Atlas.
+
+---
+
 ## ⚡ Quick `.env` Template Copy-Paste
 
 ```env
@@ -109,3 +125,10 @@ NODE_ENV=development
 MONGO_URI=mongodb://127.0.0.1:27017/minnor
 JWT_SECRET=super_secret_jwt_key_hyper_local_event_hub_2026
 ```
+
+---
+
+## 📄 Related Documentation Links
+
+- [📖 Main Project Documentation & Setup Guide](README.md)
+- [📐 System Architecture, Component & ER Diagrams](ARCHITECTURE.md)

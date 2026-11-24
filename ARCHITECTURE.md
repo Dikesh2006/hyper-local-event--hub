@@ -541,11 +541,36 @@ sequenceDiagram
     Engine-->>Customer: 201 Created (Populated Booking with Digital QR Ticket)
 ```
 
+### Resource Booking Pipelines Breakdown
+
+The booking engine coordinates four distinct reservation pipelines:
+
+1. **Multiplex Movie Ticketing Pipeline**:
+   - Validates that selected showtime belongs to the specified theatre screen.
+   - Evaluates row positions to calculate dynamic seat pricing: Rows A & B are tagged as VIP Recliners (Base + ₹100), while Rows C through H are Standard Club Seats.
+   - Performs atomic validation against `showtime.bookedSeats` to reject overlapping seat reservations.
+   - Appends booked seat tags and decrements `availableSeats`.
+
+2. **Live Event Ticketing Pipeline**:
+   - Queries `event.seatsAvailable` against the requested ticket quantity.
+   - Atomically decrements remaining pass inventory via `$inc: { seatsAvailable: -count }` and increments booking analytics.
+
+3. **Banquet Hall & Venue Leasing Pipeline**:
+   - Validates rental dates and time slots against the hall's availability calendar.
+   - Computes total billing dynamically based on booking type: `hourlyRate * durationHours` for daytime events or `pricePerNight` for overnight functions.
+   - Connects host owner identity and customer details into a confirmed venue reservation record.
+
+4. **Event Manager Hiring Pipeline**:
+   - Matches client event requirements with coordinator specialization (weddings, corporate, concerts).
+   - Generates client-planner contract records bound to the manager's `pricePerEvent` rate.
+   - Dispatches booking details directly to the manager's consultation schedule.
+
 ### Cancellation & Inventory Restoration
 When a customer cancels a booking via `PUT /api/bookings/:id/cancel`:
 1. The booking status is flipped to `cancelled`.
 2. **For Movies**: All seats registered under `booking.seats` are removed from the movie's `showtime.bookedSeats` array, and `availableSeats` is incremented.
 3. **For Events**: `event.seatsAvailable` is atomically incremented by `booking.seats.length`.
+4. **For Halls & Venues**: Availability calendar slot is released for re-booking.
 
 ---
 
@@ -765,4 +790,4 @@ flowchart TD
 
 ---
 
-*This document serves as the authoritative architectural blueprint for Hyper Local Event Hub. For setup and environment configuration instructions, refer to [README.md](file:///c:/Users/HP/OneDrive/Desktop/minnor/README.md) and [API_KEYS_GUIDE.md](file:///c:/Users/HP/OneDrive/Desktop/minnor/API_KEYS_GUIDE.md).*
+*This document serves as the authoritative architectural blueprint for Hyper Local Event Hub. For setup and environment configuration instructions, refer to [README.md](README.md) and [API_KEYS_GUIDE.md](API_KEYS_GUIDE.md).*

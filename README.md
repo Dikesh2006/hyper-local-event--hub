@@ -21,25 +21,28 @@
 2. [✨ Key Features & Modules](#-key-features--modules)
 3. [🛠️ Technology Stack](#️-technology-stack)
 4. [📐 System Architecture & Workflow](#-system-architecture--workflow)
-5. [📁 Complete Directory Structure](#-complete-directory-structure)
-6. [🚀 Installation & Setup Guide](#-installation--setup-guide)
-7. [🔑 Environment Variables Reference](#-environment-variables-reference)
-8. [🗄️ Database Schemas & Entity Relationships](#️-database-schemas--entity-relationships)
-9. [🔐 Authentication, Security & RBAC](#-authentication-security--rbac)
-10. [🎬 Module 1: Multiplex Movie Booking & Seat Engine](#-module-1-multiplex-movie-booking--seat-engine)
-11. [🎟️ Module 2: Live Event Discovery & Pass Inventory](#️-module-2-live-event-discovery--pass-inventory)
-12. [🏛️ Module 3: Banquet Hall & Venue Reservation](#️-module-3-banquet-hall--venue-reservation)
-13. [🧑‍💼 Module 4: Certified Event Manager Hiring](#-module-4-certified-event-manager-hiring)
-14. [📱 Module 5: Cryptographic QR Code Digital Passports](#-module-5-cryptographic-qr-code-digital-passports)
-15. [💳 Module 6: Razorpay Payment Gateway & HMAC-SHA256 Flow](#-module-6-razorpay-payment-gateway--hmac-sha256-flow)
-16. [⭐ Module 7: Polymorphic Ratings & Feedback Engine](#-module-7-polymorphic-ratings--feedback-engine)
-17. [📊 Module 8: Business Intelligence & Multi-Role Dashboards](#-module-8-business-intelligence--multi-role-dashboards)
-18. [🔌 Complete REST API Endpoints Specification](#-complete-rest-api-endpoints-specification)
-19. [🧪 Testing & Seeding Utilities](#-testing--seeding-utilities)
-20. [👥 Pre-Seeded Demo Credentials](#-pre-seeded-demo-credentials)
-21. [🛠️ Troubleshooting & FAQ](#️-troubleshooting--faq)
-22. [🤝 Contributing & GitHub Workflow](#-contributing--github-workflow)
-23. [📄 Documentation Links & License](#-documentation-links--license)
+5. [🏛️ Software Design Patterns](#️-software-design-patterns)
+6. [📁 Complete Directory Structure](#-complete-directory-structure)
+7. [🚀 Installation & Setup Guide](#-installation--setup-guide)
+8. [⚡ Consolidated Developer Command Matrix](#-consolidated-developer-command-matrix)
+9. [🔑 Environment Variables Reference](#-environment-variables-reference)
+10. [🗄️ Database Schemas & Entity Relationships](#️-database-schemas--entity-relationships)
+11. [🔐 Authentication, Security & RBAC](#-authentication-security--rbac)
+12. [🎬 Module 1: Multiplex Movie Booking & Seat Engine](#-module-1-multiplex-movie-booking--seat-engine)
+13. [🎟️ Module 2: Live Event Discovery & Pass Inventory](#️-module-2-live-event-discovery--pass-inventory)
+14. [🏛️ Module 3: Banquet Hall & Venue Reservation](#️-module-3-banquet-hall--venue-reservation)
+15. [🧑‍💼 Module 4: Certified Event Manager Hiring](#-module-4-certified-event-manager-hiring)
+16. [📱 Module 5: Cryptographic QR Code Digital Passports](#-module-5-cryptographic-qr-code-digital-passports)
+17. [💳 Module 6: Razorpay Payment Gateway & HMAC-SHA256 Flow](#-module-6-razorpay-payment-gateway--hmac-sha256-flow)
+18. [⭐ Module 7: Polymorphic Ratings & Feedback Engine](#-module-7-polymorphic-ratings--feedback-engine)
+19. [📊 Module 8: Business Intelligence & Multi-Role Dashboards](#-module-8-business-intelligence--multi-role-dashboards)
+20. [🔌 Complete REST API Endpoints Specification](#-complete-rest-api-endpoints-specification)
+21. [📬 Concrete API Request & Response Examples](#-concrete-api-request--response-examples)
+22. [🧪 Testing & Seeding Utilities](#-testing--seeding-utilities)
+23. [👥 Pre-Seeded Demo Credentials](#-pre-seeded-demo-credentials)
+24. [🛠️ Troubleshooting & FAQ](#️-troubleshooting--faq)
+25. [🤝 Contributing & GitHub Workflow](#-contributing--github-workflow)
+26. [📄 Documentation Links & License](#-documentation-links--license)
 
 ---
 
@@ -255,6 +258,21 @@ sequenceDiagram
         Frontend-->>Customer: Show Payment Declined Notification
     end
 ```
+
+---
+
+## 🏛️ Software Design Patterns
+
+The codebase is engineered using established enterprise software design patterns:
+
+| Design Pattern | Implementation in Project | Benefits & Technical Value |
+|---|---|---|
+| **Model-View-Controller (MVC)** | Mongoose Schemas (`src/models/`), Express Controllers (`src/controllers/`), and React Components (`frontend/src/pages/`). | Strict separation of data concerns, business orchestration, and presentation logic. |
+| **Adapter / Fallback Gateway** | `backend/src/utils/razorpay.js` encapsulates the Razorpay SDK and provides a mock HMAC verification fallback when API keys are omitted. | Enables unit testing and offline development without mandatory third-party credentials. |
+| **Polymorphic Reference Pattern** | `Review.js` model utilizes Mongoose dynamic `refPath: 'targetType'` across Movies, Events, Halls, and Managers. | Eliminates duplicate review collections by providing a unified rating engine for any resource. |
+| **Pessimistic Concurrency Check** | `bookingController.js` validates requested seat numbers against the showtime's `bookedSeats` array before database write. | Eliminates double-booking race conditions during simultaneous user checkouts. |
+| **Cryptographic Pipeline Pattern** | Node.js `crypto` creates HMAC-SHA256 digests (`orderId|paymentId`) to authenticate payments, while `qrcode` produces verifiable Base64 tickets. | Prevents transaction forgery and produces offline-scannable digital tickets. |
+| **Interceptor & Token Injection** | Axios interceptors in `frontend/src/api/api.js` automatically inject `Bearer <token>` and purge stale credentials on HTTP 401. | Centralized authentication lifecycle without manually managing headers in individual components. |
 
 ---
 
@@ -494,6 +512,21 @@ cd hyper-local-event--hub
    npm run dev
    ```
    *The frontend client will open at `http://localhost:3000`.*
+
+---
+
+## ⚡ Consolidated Developer Command Matrix
+
+| Command | Directory | Purpose & Behavior |
+|---|---|---|
+| `npm run dev` | `backend/` | Starts backend with `nodemon` live-reload on port `4000`. |
+| `npm start` | `backend/` | Runs backend with standard Node.js runtime. |
+| `npm run seed` | `backend/` | Seeds minimal testing dataset (Admin, 2 movies, 2 events, 2 halls, 2 managers). |
+| `npm run seed:demo` | `backend/` | Seeds rich Bhopal demo dataset with multi-role accounts and seat matrices. |
+| `npm run test:razorpay` | `backend/` | Executes end-to-end Razorpay order, HMAC verification & QR ticket integration test. |
+| `npm run dev` | `frontend/` | Starts Vite React frontend development server on port `3000` with `/api` proxy. |
+| `npm run build` | `frontend/` | Bundles and minifies production assets into `frontend/dist/`. |
+| `npm run preview` | `frontend/` | Locally previews the production build. |
 
 ---
 
@@ -837,6 +870,121 @@ The platform features a polymorphic review engine where any customer can review 
 | `GET` | `/api/admin/revenue` | Protected (`admin`) | View gross revenue and successful payments |
 | `GET` | `/api/admin/reviews` | Protected (`admin`) | Moderate customer reviews |
 | `GET` | `/api/admin/notifications` | Protected (`admin`) | Get summary count of pending approval items |
+
+---
+
+## 📬 Concrete API Request & Response Examples
+
+### 1. User Registration (`POST /api/auth/register`)
+**Request:**
+```bash
+curl -X POST http://localhost:4000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "password": "SecurePassword123!",
+    "role": "user",
+    "city": "Bhopal"
+  }'
+```
+**Response (`201 Created`):**
+```json
+{
+  "_id": "673f1234567890abcdef0001",
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "role": "user",
+  "city": "Bhopal",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+### 2. User Login (`POST /api/auth/login`)
+**Request:**
+```bash
+curl -X POST http://localhost:4000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "jane@example.com",
+    "password": "SecurePassword123!"
+  }'
+```
+**Response (`200 OK`):**
+```json
+{
+  "_id": "673f1234567890abcdef0001",
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "role": "user",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+### 3. Create Razorpay Test Order (`POST /api/payments/razorpay/create-order`)
+**Request:**
+```bash
+curl -X POST http://localhost:4000/api/payments/razorpay/create-order \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <TOKEN>" \
+  -d '{
+    "amount": 500,
+    "currency": "INR",
+    "bookingDetails": {
+      "type": "movie",
+      "title": "Interstellar",
+      "venue": "DB City Mall Cineplex"
+    }
+  }'
+```
+**Response (`201 Created`):**
+```json
+{
+  "orderId": "order_OG98aBcd123456",
+  "amount": 50000,
+  "currency": "INR",
+  "keyId": "rzp_test_placeholder"
+}
+```
+
+### 4. Verify Razorpay Payment & Confirm Booking (`POST /api/payments/razorpay/verify`)
+**Request:**
+```bash
+curl -X POST http://localhost:4000/api/payments/razorpay/verify \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <TOKEN>" \
+  -d '{
+    "razorpay_order_id": "order_OG98aBcd123456",
+    "razorpay_payment_id": "pay_OG99xYza789012",
+    "razorpay_signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bookingDetails": {
+      "type": "movie",
+      "movieId": "673f1234567890abcdef0010",
+      "title": "Interstellar",
+      "venue": "DB City Mall Cineplex",
+      "showtime": "07:00 PM",
+      "date": "2026-11-30",
+      "seats": [{ "seatNumber": "A1", "price": 350, "tier": "VIP" }],
+      "totalPrice": 350
+    }
+  }'
+```
+**Response (`200 OK`):**
+```json
+{
+  "success": true,
+  "booking": {
+    "_id": "673f1234567890abcdef0020",
+    "ticketId": "TKT-LMNOP123-ABCDEF",
+    "user": "673f1234567890abcdef0001",
+    "totalPrice": 350,
+    "status": "confirmed",
+    "paymentStatus": "paid",
+    "qrCodeUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...",
+    "seats": [{ "seatNumber": "A1", "price": 350, "tier": "VIP" }]
+  }
+}
+```
 
 ---
 
