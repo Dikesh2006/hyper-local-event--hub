@@ -1,6 +1,14 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
+/**
+ * Authentication Middleware: Validates incoming Bearer JWT token from Authorization header.
+ * Attaches the sanitized user document to req.user (excluding password hash).
+ *
+ * @param {import('express').Request} req - Express request object
+ * @param {import('express').Response} res - Express response object
+ * @param {import('express').NextFunction} next - Express next middleware function
+ */
 const protect = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -20,6 +28,12 @@ const protect = async (req, res, next) => {
   }
 };
 
+/**
+ * Normalizes legacy or alternative role aliases to standard internal roles.
+ *
+ * @param {string} role - Input user role string
+ * @returns {string} Standardized role identifier
+ */
 const normalizeRole = (role) => {
   if (!role) return 'user';
   if (role === 'admin') return 'admin';
@@ -29,6 +43,13 @@ const normalizeRole = (role) => {
   return role;
 };
 
+/**
+ * Role-Based Access Control (RBAC) Middleware.
+ * Restricts route access to specified roles. Super-admins ('admin') bypass checks automatically.
+ *
+ * @param {...string} roles - Permitted user roles
+ * @returns {import('express').RequestHandler} Express middleware handler
+ */
 const authorize = (...roles) => {
   return (req, res, next) => {
     if (!req.user) {
